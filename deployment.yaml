@@ -1,1 +1,26 @@
-apiVersion:
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: tls-dashboard
+spec:
+  restartPolicy: Never
+  voluemes:
+  - name: shard-data
+    emptyDir: {}
+  containers:
+  - name: nginx
+    image: nginx:1.12
+    volumeMounts:
+    - name: shard-data
+      mountPath: /usr/share/nginx/html
+  - name: tlsnode
+    image: bluerdocker/mynode:latest
+    volumeMounts:
+    - name: shard-data
+      mountPath: /pod-data
+    command: ["/bin/sh"]
+    args: ["-c","mv /root/web_service/index.html /pod-data/index.html"]
+
+    
+
