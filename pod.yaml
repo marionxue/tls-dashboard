@@ -20,7 +20,7 @@ spec:
       hostIP: 192.168.10.247
       hostPort: 10080
   - name: tlsnode
-    image: bluerdocker/mynode:latest
+    image: bluerdocker/mynode:v2
     volumeMounts:
     - name: shard-data
       mountPath: /pod-data
