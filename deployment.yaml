@@ -19,8 +19,8 @@ spec:
     volumeMounts:
     - name: shard-data
       mountPath: /pod-data
-    command: ["/bin/sh"]
-    args: ["-c","mv /root/web_service/index.html /pod-data/index.html"]
+    command: ["/bin/bash","-c","--"]
+    args: ["while true; do sleep 300; done"]
 
     
 
