@@ -5,13 +5,13 @@ metadata:
   name: tls-dashboard
 spec:
   restartPolicy: Never
-  voluemes:
+  volumes:
   - name: shard-data
     emptyDir: {}
   containers:
   - name: nginx
     image: nginx:1.12
-    volumeMounts:
+    volumMounts:
     - name: shard-data
       mountPath: /usr/share/nginx/html
     ports:
