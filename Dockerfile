@@ -6,7 +6,7 @@ ENV NGINX_VERSION 1.14.2-1~stretch
 ENV NJS_VERSION   1.14.2.0.2.6-1~stretch
 
 RUN set -x \
-   && mv sources.list /etc/apt/sources.list \
+   mv sources.list /etc/apt/sources.list \
    && apt-get update -y \
    && apt-get install --no-install-recommends --no-install-suggests -y apt-transport-https ca-certificates \
 	&& \
