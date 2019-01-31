@@ -21,7 +21,7 @@ var hosts = [
     hostname: 'www.zhihu.com'
   },
   {
-    hostname: 'www.chinadevops.com'
+    hostname: 'www.21vianet.com'
   },
   {
     hostname: 'example.dev',
