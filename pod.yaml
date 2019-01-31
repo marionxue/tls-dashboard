@@ -17,10 +17,10 @@ spec:
     ports:
     - name: web
       containerPort: 80
-      hostIP: 192.168.10.247
-      hostPort: 10080
+      hostIP: 192.168.10.248
+      hostPort: 10090
   - name: tlsnode
-    image: bluerdocker/mynode:v2
+    image: bluerdocker/mynode:latest
     volumeMounts:
     - name: shard-data
       mountPath: /pod-data

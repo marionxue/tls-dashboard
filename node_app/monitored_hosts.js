@@ -18,7 +18,10 @@ var hosts = [
     hostname: 'www.baidu.com'
   },
   {
-    hostname: 'incomplete-chain.badssl.com'
+    hostname: 'www.zhihu.com'
+  },
+  {
+    hostname: 'www.chinadevops.com'
   },
   {
     hostname: 'example.dev',
