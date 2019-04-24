@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: tls-svc
+  namespace: devops
+spec:
+  selector:
+    app: tls-dashboard
+    tier: frontend
+  clusterIP: 10.254.97.97
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 80

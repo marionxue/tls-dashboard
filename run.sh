@@ -1,6 +1,6 @@
 #!/bin/bash
 
-while True:
+while true
 do
     cat /pod-data/get_cert_info.js > /root/node_app/get_cert_info.js
     /usr/local/bin/node /root/node_app/get_cert_info.js
