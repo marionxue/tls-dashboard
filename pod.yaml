@@ -9,24 +9,19 @@ spec:
   volumes:
   - name: tls-dashboard
     nfs:
-      server: 192.168.10.247
-      path: /var/lib/docker/tls-dashboard
+      server: 192.168.10.245
+      path: /data
   containers:
   - name: nginx
     image: nginx:1.12
-    volumMounts:
+    volumeMounts:
     - name: tls-dashboard
       mountPath: /usr/share/nginx/html
     ports:
     - name: web
       containerPort: 80
   - name: tlsnode
-    image: bluerdocker/mynode:latest
+    image: bluerdocker/tls-dashboard:v1
     volumeMounts:
     - name: tls-dashboard
       mountPath: /pod-data
-    command: ["/bin/bash","-c","--"]
-    args: ["while true; do sleep 300; done"]
-
-    
-

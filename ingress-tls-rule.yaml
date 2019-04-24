@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:                                                                                                                               
+  name: ingress-tls
+  namespace: devops
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  rules:
+  - host: tlschecker.xsllab.com
+    http:
+      paths:
+      - path:
+        backend:
+          serviceName: tls-dashboard-service
+          servicePort: 80

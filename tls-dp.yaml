@@ -1,0 +1,55 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: tls-dashboard
+  namespace: devops
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: tls-dashboard
+        tier: frontend
+    spec:
+      volumes:
+      - name: staticfile
+        nfs: 192.168.10.245
+        path: /data
+      containers:
+      - name: nginx
+        image: nginx:1.12
+        imagePullPolicy: IfNotPresent
+        volumeMounts:
+        - name: staticfile
+          mountPath: /usr/share/nginx/html
+        ports:
+        - name: http
+          containerPort: 80
+        - name: https
+          containerPort: 443
+      - name: tlschecker
+        image: bluerdocker/tls-dashboard:v1
+        volumeMounts:
+        - name: staticfile
+          mountPath: /pod-data
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: tls-dashboard-service
+  namespace: devops
+spec:
+  selector:
+    app: tls-dashboard
+    tier: frontend
+  clusterIP: 10.254.189.210
+  type: ClusterIP
+  ports:
+  - name: http
+    port: 80
+    targetPort: 80
+  - name: https
+    port: 443
+    targetPort: 443
+          
+      
