@@ -9,7 +9,7 @@ spec:
   volumes:
   - name: tls-dashboard
     nfs:
-      server: 192.168.10.248
+      server: 192.168.10.247
       path: /var/lib/docker/tls-dashboard
   containers:
   - name: nginx
