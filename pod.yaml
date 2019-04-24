@@ -3,26 +3,27 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: tls-dashboard
+  namespace: devops
 spec:
-  restartPolicy: Never
+  restartPolicy: OnFailure
   volumes:
-  - name: shard-data
-    emptyDir: {}
+  - name: tls-dashboard
+    nfs:
+      server: 192.168.10.248
+      path: /var/lib/docker/tls-dashboard
   containers:
   - name: nginx
     image: nginx:1.12
     volumMounts:
-    - name: shard-data
+    - name: tls-dashboard
       mountPath: /usr/share/nginx/html
     ports:
     - name: web
       containerPort: 80
-      hostIP: 192.168.10.248
-      hostPort: 10090
   - name: tlsnode
     image: bluerdocker/mynode:latest
     volumeMounts:
-    - name: shard-data
+    - name: tls-dashboard
       mountPath: /pod-data
     command: ["/bin/bash","-c","--"]
     args: ["while true; do sleep 300; done"]
