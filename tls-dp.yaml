@@ -28,7 +28,7 @@ spec:
         - name: http
           containerPort: 80
       - name: tlschecker
-        image: bluerdocker/tls-dashboard:v4
+        image: bluerdocker/tls-dashboard:v6
         volumeMounts:
         - name: staticfile
           mountPath: /pod-data
