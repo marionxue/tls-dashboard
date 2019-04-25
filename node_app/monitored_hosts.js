@@ -1,18 +1,18 @@
 var hosts = [
   {
-    hostname: 'www.xingshulinimg.com'
+    hostname: 'www.bing.com'
   },
   {
-    hostname: 'www.xingshulin.com'
+    hostname: 'www.bing.com'
   },
   {
-    hostname: 'www.xingshulinih.com'
+    hostname: 'www.bing.com'
   },
   {
-    hostname: 'www.xsl.link'
+    hostname: 'www.bing.link'
   },
   {
-    hostname: 'www.xingshulin.cn'
+    hostname: 'www.bing.cn'
   },
   {
     hostname: 'www.baidu.com'
@@ -21,7 +21,7 @@ var hosts = [
     hostname: 'www.zhihu.com'
   },
   {
-    hostname: 'www.21vianet.com'
+    hostname: 'www.bing.com'
   },
   {
     hostname: 'example.dev',
