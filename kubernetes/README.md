@@ -103,7 +103,7 @@ root@k8s-m1:/opt/k8s/work/manifests/tls-dashboard# kubectl logs -f nginx-ingress
 ```
 
 6. 到这里基本上就已经完成了,我们在浏览器进行访问一下
-
+![tlschecker](../tlschecker.png)
 
 
 
