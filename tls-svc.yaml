@@ -10,5 +10,6 @@ spec:
   clusterIP: 10.254.97.97
   type: ClusterIP
   ports:
-  - port: 80
+  - protocol: TCP
+    port: 80
     targetPort: 80

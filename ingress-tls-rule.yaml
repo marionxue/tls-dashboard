@@ -12,5 +12,5 @@ spec:
       paths:
       - path:
         backend:
-          serviceName: tls-dashboard-service
+          serviceName: tls-service
           servicePort: 80
